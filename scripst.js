@@ -1,7 +1,7 @@
 
 function displayData() {
-    document.getElementById("satList").value = null;
-    document.getElementById("decList").value = null;
+    document.getElementById("satList") = null;
+    document.getElementById("decList") = null;
     let mg = parseFloat(document.getElementById("mg").value.replace(",","."));
     let hlt =  parseInt(document.getElementById("hlt").value);
     let p = parseInt(document.getElementById("p").value);
