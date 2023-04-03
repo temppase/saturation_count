@@ -40,6 +40,6 @@ function displayData() {
         lidec.appendChild(document.createTextNode(m));
         uldec.appendChild(lidec);
     }
-    sat = [];
-    dec = [];
+    sat.length = 0;
+    dec.length = 0;
 }
