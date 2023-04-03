@@ -1,5 +1,7 @@
 
 function displayData() {
+    let lisat = null;
+    let lidec = null;
     document.getElementById("satList") = null;
     document.getElementById("decList") = null;
     let mg = parseFloat(document.getElementById("mg").value.replace(",","."));
@@ -28,13 +30,13 @@ function displayData() {
 
     for (let x = 0; x < sat.length; x++) {
         let y = sat[x];
-        let lisat = document.createElement('li');
+        lisat = document.createElement('li');
         lisat.appendChild(document.createTextNode(y));
         ulsat.appendChild(lisat);
     }
     for (let n = 0; n < dec.length; n++) {
         let m = dec[n];
-        let lidec = document.createElement('li');
+        lidec = document.createElement('li');
         lidec.appendChild(document.createTextNode(m));
         uldec.appendChild(lidec);
     }
