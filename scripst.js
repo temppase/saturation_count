@@ -1,5 +1,7 @@
 
 function displayData() {
+    document.getElementById("satList").reset();
+    document.getElementById("decList").reset();
     let mg = parseFloat(document.getElementById("mg").value.replace(",","."));
     let hlt =  parseInt(document.getElementById("hlt").value);
     let p = parseInt(document.getElementById("p").value);
@@ -10,7 +12,6 @@ function displayData() {
     const dec = [];
     while(i < p){
         sat[i] = ans.toFixed(3);
-        console.log(ans);
         ans = (ans / 2 * hlt_r) + mg;
         i++;
     }
@@ -18,7 +19,6 @@ function displayData() {
     let count = 0;
     while(ans > 0.1){
         dec[count] = ans.toFixed(3);
-        console.log(ans);
         ans = ans / 2 * hlt_r;
         count++;
     }
@@ -38,4 +38,5 @@ function displayData() {
         lidec.appendChild(document.createTextNode(m));
         uldec.appendChild(lidec);
     }
+
 }
