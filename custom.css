@@ -1,0 +1,7 @@
+.list-scroll{
+    height: 380px;
+    overflow-y: scroll;
+    background-color: #bbb;
+    padding: 2%;
+    border-radius: 5px;
+}
