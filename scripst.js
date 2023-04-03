@@ -1,7 +1,9 @@
 
 function displayData() {
-    let lisat = null;
-    let lidec = null;
+    let lisat = document.getElementById("satList");
+    lisat.remove();
+    let lidec = document.getElementById("decList");
+    lidec.remove();
     //document.getElementById("satList") = null;
     //document.getElementById("decList") = null;
     let mg = parseFloat(document.getElementById("mg").value.replace(",","."));
