@@ -12,14 +12,16 @@ function displayData() {
     let i = 0;
     
     while(i < p){
-        sat[i] = ans.toFixed(3);
-        ans = (ans / 2 * hlt_r) + mg;
+        sat[i] = ans.toFixed(2);
+        if(i < p - 1){
+            ans = (ans / 2 * hlt_r) + mg;
+        }
         i++;
     }
     document.getElementById("sat").innerHTML = "Saturaatio " + p + " päivän jälkeen: " + ans.toFixed(2);
     let count = 0;
     while(ans > 0.1){
-        dec[count] = ans.toFixed(3);
+        dec[count] = ans.toFixed(2);
         ans = ans / 2 * hlt_r;
         count++;
     }
@@ -31,17 +33,21 @@ function displayData() {
         resetLists(oldec);
     }
     for (let x = 0; x < sat.length; x++) {
+        console.log("x: " + x);
         lisat = document.createElement('li');
         lisat.appendChild(document.createTextNode(sat[x]));
         olsat.appendChild(lisat);
     }
     document.getElementById("satList");
     for (let n = 0; n < dec.length; n++) {
+        console.log("n: " + n);
         lidec = document.createElement('li');
         lidec.appendChild(document.createTextNode(dec[n]));
         oldec.appendChild(lidec);
     }
     snum = olsat.children.length;
+    sat.length = 0;
+    dec.length = 0;
 }
 function resetLists(x){
     x.innerHTML = '';
