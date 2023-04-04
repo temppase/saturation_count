@@ -1,15 +1,20 @@
 
 function displayData() {
-    let lisat = document.getElementById("satList");
-    let lidec = document.getElementById("decList");
+    const lisat = document.getElementById("satList");
+    const lidec = document.getElementById("decList");
+    lisat.length = 0;
+    lidec.length = 0;
+    const sat = [];
+    const dec = [];
+    sat.length = 0;
+    dec.length = 0;
     let mg = parseFloat(document.getElementById("mg").value.replace(",","."));
     let hlt =  parseInt(document.getElementById("hlt").value);
     let p = parseInt(document.getElementById("p").value);
     let hlt_r = hlt/24;
     let ans = mg;
     let i = 0;
-    const sat = [];
-    const dec = [];
+    
     while(i < p){
         sat[i] = ans.toFixed(3);
         ans = (ans / 2 * hlt_r) + mg;
@@ -38,6 +43,5 @@ function displayData() {
         lidec.appendChild(document.createTextNode(m));
         uldec.appendChild(lidec);
     }
-    sat.length = 0;
-    dec.length = 0;
+    
 }
