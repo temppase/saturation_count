@@ -26,22 +26,24 @@ function displayData() {
     document.getElementById("dec").innerHTML = count + " päivän jälkeen alle 0,1 mg.";
     let olsat = document.getElementById("satList");
     let oldec = document.getElementById("decList");
-
+    if(snum > 0){
+        resetLists(olsat);
+        resetLists(oldec);
+    }
     for (let x = 0; x < sat.length; x++) {
-        // let y = sat[x];
         lisat = document.createElement('li');
         lisat.appendChild(document.createTextNode(sat[x]));
         olsat.appendChild(lisat);
-        snum = lisat.length;
     }
     document.getElementById("satList");
     for (let n = 0; n < dec.length; n++) {
-        // let m = dec[n];
         lidec = document.createElement('li');
         lidec.appendChild(document.createTextNode(dec[n]));
         oldec.appendChild(lidec);
     }
-    
-    console.log("satList: " + snum)
+    snum = olsat.children.length;
+}
+function resetLists(x){
+    x.innerHTML = '';
 }
 
